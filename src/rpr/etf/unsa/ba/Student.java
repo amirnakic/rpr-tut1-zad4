@@ -20,7 +20,7 @@ public class Student {
     public void PromijeniPrezime(String prezime) { this.prezime=prezime; }
     public void PromijeniBrojIndeksa(int broj) { this.brojIndeksa = new IntWrapper(broj); }
     public void IspisiStudenta() {
-        System.out.println(DajPrezime() + DajIme() + DajBrojIndeksa());
+        System.out.println(DajPrezime() + " " + DajIme() + " (" + DajBrojIndeksa() + ")");
     }
     public boolean IstiStudent(Student s) {
         if (this.DajIme().equals(s.DajIme()) && this.DajPrezime().equals(s.DajPrezime()) && this.DajBrojIndeksa() == s.DajBrojIndeksa()) return true;
