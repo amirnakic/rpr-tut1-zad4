@@ -5,7 +5,7 @@ public class Student {
     private class IntWrapper {
         private int value;
         IntWrapper(int value) { this.value = value; }
-        int PrebaciUInteger() { return (int)this.value; }
+        int PrebaciUInteger() { return (int)value; }
     }
     private IntWrapper brojIndeksa;
     Student (String ime, String prezime, int br_indeksa) {
