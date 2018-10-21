@@ -26,4 +26,7 @@ public class Student {
         if (this.DajIme().equals(s.DajIme()) && this.DajPrezime().equals(s.DajPrezime()) && this.DajBrojIndeksa() == s.DajBrojIndeksa()) return true;
         return false;
     }
+    public void BrisiStudenta() {
+        ime = null; prezime = null; brojIndeksa = null;
+    }
 }
