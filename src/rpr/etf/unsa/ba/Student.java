@@ -19,4 +19,7 @@ public class Student {
     public void PromijeniIme(String ime) { this.ime = ime; }
     public void PromijeniPrezime(String prezime) { this.prezime=prezime; }
     public void PromijeniBrojIndeksa(int broj) { this.brojIndeksa = new IntWrapper(broj); }
+    public void IspisiStudenta(Student s) {
+        System.out.println(s.DajPrezime() + s.DajIme() + s.DajBrojIndeksa());
+    }
 }
