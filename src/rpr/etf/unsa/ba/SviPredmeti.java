@@ -1,0 +1,4 @@
+package rpr.etf.unsa.ba;
+
+public class SviPredmeti {
+}
