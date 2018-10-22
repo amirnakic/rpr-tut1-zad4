@@ -3,7 +3,8 @@ package rpr.etf.unsa.ba;
 import java.util.Scanner;
 
 public class Program {
-
+	public static Predmet[] niz1;
+	public static Student[] niz2;
     public static void main(String[] args) {
     	boolean istina = true;
     	while (istina) {
@@ -24,10 +25,10 @@ public class Program {
 					istina = false;
 					break;
 				case 1:
-					System.out.println("-----Izabrali ste opciju unosa novih predmeta-----");
+					System.out.println("-----Izabrali ste opciju kreiranja novih predmeta-----");
 					System.out.println("Unesite broj predmeta: ");
 					int brojPredmeta =  ulaz.nextInt();
-					Predmet[] niz = new Predmet[brojPredmeta];
+					niz1 = new Predmet[brojPredmeta];
 					for(int i = 0; i < brojPredmeta; i++) {
 						System.out.println("Unesite naziv predmeta: ");
 						String nazivPredmeta = ulaz.nextLine();
@@ -35,8 +36,29 @@ public class Program {
 						String sifraPredmeta = ulaz.nextLine();
 						System.out.println("Unesite maksimalni broj studenata na predmetu: ");
 						int maxBrojStudenataNaPredmetu = ulaz.nextInt();
-						niz[i] = new Predmet(nazivPredmeta, sifraPredmeta, maxBrojStudenataNaPredmetu);
+						niz1[i] = new Predmet(nazivPredmeta, sifraPredmeta, maxBrojStudenataNaPredmetu);
 					}
+				case 2:
+					System.out.println("-----Izabrali ste opciju brisanja predmeta-----");
+					boolean pronadjen = false;
+					while (!pronadjen) {
+						System.out.println("Unesite naziv predmeta kojeg želite obrisati: ");
+						String nazivPredmeta = ulaz.nextLine();
+						System.out.println("Unesite šifru predmeta kojeg želite obrisati: ");
+						String sifraPredmeta = ulaz.nextLine();
+						for (int i = 0; i < niz1.length; i++) {
+							if (niz1[i].DajNazivPredmeta().equals(nazivPredmeta) && niz1[i].DajSifruPredmeta().equals(sifraPredmeta)) {
+								pronadjen=true;
+								niz1[i].BrisiPredmet();
+								System.out.println("Predmet " + nazivPredmeta + " sa šifrom " + sifraPredmeta + " je uspješno obrisan.");
+								break;
+							}
+						}
+						if (!pronadjen) System.out.println("Predmet nije pronađen. Pokušajte ponovo.");
+						else break;
+					}
+					break;
+				
 			}
 		}
 
