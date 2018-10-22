@@ -40,19 +40,19 @@ public class Program {
 					}
 				case 2:
 					System.out.println("-----Izabrali ste opciju brisanja predmeta-----");
-					boolean pronadjen = false;
-					while (!pronadjen) {
+					boolean pronadjen1 = false;
+					while (!pronadjen1) {
 						System.out.println("Unesite šifru predmeta kojeg želite obrisati: ");
 						String sifraPredmeta = ulaz.nextLine();
 						for (int i = 0; i < niz1.length; i++) {
 							if (niz1[i].DajSifruPredmeta().equals(sifraPredmeta)) {
-								pronadjen=true;
+								pronadjen1=true;
 								niz1[i].BrisiPredmet();
 								System.out.println("Predmet sa šifrom " + sifraPredmeta + " je uspješno obrisan.");
 								break;
 							}
 						}
-						if (!pronadjen) System.out.println("Predmet nije pronađen. Pokušajte ponovo.");
+						if (!pronadjen1) System.out.println("Predmet nije pronađen. Pokušajte ponovo.");
 						else break;
 					}
 					break;
@@ -73,19 +73,19 @@ public class Program {
 					break;
                 case 4:
                     System.out.println("-----Izabrali ste opciju brisanja studenta-----");
-                    boolean pronadjen = false;
-                    while (!pronadjen) {
+                    boolean pronadjen2 = false;
+                    while (!pronadjen2) {
                         System.out.println("Unesite broj indeksa studenta kojeg želite obrisati: ");
-                        int brojIndeksa = ulaz.nextLine();
+                        int brojIndeksa = ulaz.nextInt();
                         for (int i = 0; i < niz2.length; i++) {
                             if (niz2[i].DajBrojIndeksa() == brojIndeksa) {
-                                pronadjen=true;
+                                pronadjen2=true;
                                 niz2[i].BrisiStudenta();
                                 System.out.println("Student sa brojem indeksa " + brojIndeksa + " je uspješno obrisan.");
                                 break;
                             }
                         }
-                        if (!pronadjen) System.out.println("Student nije pronađen. Pokušajte ponovo.");
+                        if (!pronadjen2) System.out.println("Student nije pronađen. Pokušajte ponovo.");
                         else break;
                     }
                     break;
