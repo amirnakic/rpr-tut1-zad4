@@ -42,15 +42,13 @@ public class Program {
 					System.out.println("-----Izabrali ste opciju brisanja predmeta-----");
 					boolean pronadjen = false;
 					while (!pronadjen) {
-						System.out.println("Unesite naziv predmeta kojeg želite obrisati: ");
-						String nazivPredmeta = ulaz.nextLine();
 						System.out.println("Unesite šifru predmeta kojeg želite obrisati: ");
 						String sifraPredmeta = ulaz.nextLine();
 						for (int i = 0; i < niz1.length; i++) {
-							if (niz1[i].DajNazivPredmeta().equals(nazivPredmeta) && niz1[i].DajSifruPredmeta().equals(sifraPredmeta)) {
+							if (niz1[i].DajSifruPredmeta().equals(sifraPredmeta)) {
 								pronadjen=true;
 								niz1[i].BrisiPredmet();
-								System.out.println("Predmet " + nazivPredmeta + " sa šifrom " + sifraPredmeta + " je uspješno obrisan.");
+								System.out.println("Predmet sa šifrom " + sifraPredmeta + " je uspješno obrisan.");
 								break;
 							}
 						}
@@ -70,10 +68,28 @@ public class Program {
 						String prezimeStudenta = ulaz.nextLine();
 						System.out.println("Unesite broj indeksa: ");
 						int brojIndeksa = ulaz.nextInt();
-						niz1[i] = new Predmet(imeStudenta, prezimeStudenta, brojIndeksa);
+						niz2[i] = new Student(imeStudenta, prezimeStudenta, brojIndeksa);
 					}
 					break;
-					
+                case 4:
+                    System.out.println("-----Izabrali ste opciju brisanja studenta-----");
+                    boolean pronadjen = false;
+                    while (!pronadjen) {
+                        System.out.println("Unesite broj indeksa studenta kojeg želite obrisati: ");
+                        int brojIndeksa = ulaz.nextLine();
+                        for (int i = 0; i < niz2.length; i++) {
+                            if (niz2[i].DajBrojIndeksa() == brojIndeksa) {
+                                pronadjen=true;
+                                niz2[i].BrisiStudenta();
+                                System.out.println("Student sa brojem indeksa " + brojIndeksa + " je uspješno obrisan.");
+                                break;
+                            }
+                        }
+                        if (!pronadjen) System.out.println("Student nije pronađen. Pokušajte ponovo.");
+                        else break;
+                    }
+                    break;
+                
 			}
 		}
 
