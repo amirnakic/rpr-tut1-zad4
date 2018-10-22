@@ -58,7 +58,22 @@ public class Program {
 						else break;
 					}
 					break;
-				
+				case 3:
+					System.out.println("-----Izabrali ste opciju kreiranja novih studenata-----");
+					System.out.println("Unesite broj studenata: ");
+					int brojStudenata =  ulaz.nextInt();
+					niz2 = new Student[brojStudenata];
+					for(int i = 0; i < brojStudenata; i++) {
+						System.out.println("Unesite ime studenta: ");
+						String imeStudenta = ulaz.nextLine();
+						System.out.println("Unesite prezime studenta: ");
+						String prezimeStudenta = ulaz.nextLine();
+						System.out.println("Unesite broj indeksa: ");
+						int brojIndeksa = ulaz.nextInt();
+						niz1[i] = new Predmet(imeStudenta, prezimeStudenta, brojIndeksa);
+					}
+					break;
+					
 			}
 		}
 
