@@ -89,7 +89,25 @@ public class Program {
                         else break;
                     }
                     break;
-                
+				case 5:
+					System.out.println("-----Izabrali ste opciju ispisa spiska studenata na predmetu-----");
+					boolean pronadjen3 = false;
+					while (!pronadjen3) {
+						System.out.println("Unesite šifru predmeta čiji spisak studenata želite: ");
+						String sifraPredmeta = ulaz.nextLine();
+						for (int i = 0; i < niz1.length; i++) {
+							if (niz1[i].DajSifruPredmeta().equals(sifraPredmeta)) {
+								pronadjen3=true;
+								niz1[i].IspisSpiskaStudenata();
+								System.out.println("Studenti na predmetu sa šifrom " + sifraPredmeta + " su uspješno ispisani.");
+								break;
+							}
+						}
+						if (!pronadjen3) System.out.println("Predmet nije pronađen. Pokušajte ponovo.");
+						else break;
+					}
+					break;
+				
 			}
 		}
 
