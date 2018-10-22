@@ -21,14 +21,14 @@ public class Predmet {
         trenutniBrojacStudenata++;
     }
     public void IspisiStudenta(Student s) {
-        for (int i=0; i < this.trenutniBrojacStudenata; i++)
+        for (int i = 0; i < this.trenutniBrojacStudenata; i++)
             if (s.IstiStudent(niz[i])) {
                 niz[i] = null;
                 trenutniBrojacStudenata--;
             }
     }
     public void IspisSpiskaStudenata() {
-        for (int i=0; i < this.trenutniBrojacStudenata; i++)
+        for (int i = 0; i < this.trenutniBrojacStudenata; i++)
             System.out.println(i+1 + ". " + niz[i].DajPrezime() + " " + niz[i].DajIme() + " (" + niz[i].DajBrojIndeksa() + ")");
     }
     public void BrisiPredmet() {
