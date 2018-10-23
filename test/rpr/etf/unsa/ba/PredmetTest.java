@@ -5,13 +5,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PredmetTest {
     @Test
-    void dajNazivPredmeta() {
+    void ispravnostPostavljanjaNazivaPredmeta() {
+        Predmet p = new Predmet("Razvoj programskih rješenja", "RPRAiE2018", 100);
+        assertEquals("Razvoj programskih rješenja", p.DajNazivPredmeta());
     }
     @Test
-    void dajSifruPredmeta() {
+    void ispravnostPostavljanjaSifrePredmeta() {
+        Predmet p = new Predmet("Razvoj programskih rješenja", "RPRAiE2018", 100);
+        assertEquals("RPRAiE2018", p.DajSifruPredmeta());
     }
     @Test
-    void dajMaxBrojStudenata() {
+    void ispravnostPostavljanjaMaxBrojaStudenata() {
+        Predmet p = new Predmet("Razvoj programskih rješenja", "RPRAiE2018", 100);
+        assertEquals(100, p.DajMaxBrojStudenata());
     }
     @Test
     void upisiStudenta() {
