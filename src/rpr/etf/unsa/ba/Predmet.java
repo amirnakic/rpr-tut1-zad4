@@ -26,7 +26,7 @@ public class Predmet {
     }
     public void IspisSpiskaStudenata() {
         for (int i = 0; i < this.trenutniBrojacStudenata; i++)
-            if (niz[i] != null) System.out.println(i+1 + ". " + niz[i].DajPrezime() + " " + niz[i].DajIme() + " (" + niz[i].DajBrojIndeksa() + ")");
+            if (niz[i] != null) System.out.println(i+1 + ". " + niz[i].IspisiStudenta());
     }
     public void BrisiPredmet() {
         nazivPredmeta = null; sifraPredmeta = null;

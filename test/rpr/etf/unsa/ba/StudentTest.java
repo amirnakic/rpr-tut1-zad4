@@ -47,8 +47,8 @@ class StudentTest {
     }
     @Test
     void ispisiStudenta() {
-    }
 
+    }
     @Test
     void istiStudent() {
     }
