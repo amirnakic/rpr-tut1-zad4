@@ -13,9 +13,6 @@ public class Predmet {
     public String DajNazivPredmeta() { return this.nazivPredmeta; }
     public String DajSifruPredmeta() { return this.sifraPredmeta; }
     public int DajMaxBrojStudenata() { return this.MAX_BROJ_STUDENATA; }
-    public void IspisiPredmet() {
-        System.out.println("Naziv predmeta: " + DajNazivPredmeta() + "; šifra predmeta:  " + DajSifruPredmeta() + "; maksimalni broj studenata: " + DajMaxBrojStudenata());
-    }
     public void UpisiStudenta(Student s) {
         niz[trenutniBrojacStudenata] = new Student(s.DajIme(), s.DajPrezime(), s.DajBrojIndeksa());
         trenutniBrojacStudenata++;
@@ -29,7 +26,7 @@ public class Predmet {
     }
     public void IspisSpiskaStudenata() {
         for (int i = 0; i < this.trenutniBrojacStudenata; i++)
-            System.out.println(i+1 + ". " + niz[i].DajPrezime() + " " + niz[i].DajIme() + " (" + niz[i].DajBrojIndeksa() + ")");
+            if (niz[i] != null) System.out.println(i+1 + ". " + niz[i].DajPrezime() + " " + niz[i].DajIme() + " (" + niz[i].DajBrojIndeksa() + ")");
     }
     public void BrisiPredmet() {
         nazivPredmeta = null; sifraPredmeta = null;

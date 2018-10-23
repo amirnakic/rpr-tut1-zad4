@@ -21,6 +21,7 @@ public class Program {
 			System.out.println("7 - ispis studenta sa predmeta");
 			Scanner ulaz = new Scanner(System.in);
 			int izbor = ulaz.nextInt();
+			ulaz.nextLine();
 			switch (izbor) {
 				case 0:
 					istina = false;
@@ -30,6 +31,7 @@ public class Program {
 					System.out.println("Unesite broj predmeta: ");
 					int brojPredmeta = ulaz.nextInt();
 					niz1 = new Predmet[brojPredmeta];
+					ulaz.nextLine();
 					for (int i = 0; i < brojPredmeta; i++) {
 						System.out.println("Unesite naziv predmeta: ");
 						String nazivPredmeta = ulaz.nextLine();
@@ -37,8 +39,10 @@ public class Program {
 						String sifraPredmeta = ulaz.nextLine();
 						System.out.println("Unesite maksimalni broj studenata na predmetu: ");
 						int maxBrojStudenataNaPredmetu = ulaz.nextInt();
+                        ulaz.nextLine();
 						niz1[i] = new Predmet(nazivPredmeta, sifraPredmeta, maxBrojStudenataNaPredmetu);
 					}
+					break;
 				case 2:
 					System.out.println("-----Izabrali ste opciju brisanja predmeta-----");
 					boolean pronadjen = false;
@@ -62,6 +66,7 @@ public class Program {
 					System.out.println("Unesite broj studenata: ");
 					int brojStudenata = ulaz.nextInt();
 					niz2 = new Student[brojStudenata];
+					ulaz.nextLine();
 					for (int i = 0; i < brojStudenata; i++) {
 						System.out.println("Unesite ime studenta: ");
 						String imeStudenta = ulaz.nextLine();
@@ -70,6 +75,7 @@ public class Program {
 						System.out.println("Unesite broj indeksa: ");
 						int brojIndeksa = ulaz.nextInt();
 						niz2[i] = new Student(imeStudenta, prezimeStudenta, brojIndeksa);
+						ulaz.nextLine();
 					}
 					break;
 				case 4:
@@ -83,6 +89,7 @@ public class Program {
 						System.out.println("Unesite broj indeksa: ");
 						int brojIndeksa = ulaz.nextInt();
 						Student s = new Student(imeStudenta, prezimeStudenta, brojIndeksa);
+						ulaz.nextLine();
 						for (int i = 0; i < niz2.length; i++) {
 							if (niz2[i].IstiStudent(s)) {
 								pronadjen1 = true;
@@ -121,6 +128,7 @@ public class Program {
 					while (!pronadjen3) {
 						System.out.println("Unesite broj indeksa studenta kojeg želite upisati: ");
 						brojIndeksa = ulaz.nextInt();
+						ulaz.nextLine();
 						for (int i = 0; i < niz2.length; i++) {
 							if (niz2[i].DajBrojIndeksa() == brojIndeksa) {
 								pronadjen3 = true;
@@ -131,6 +139,7 @@ public class Program {
 						if (!pronadjen3) System.out.println("Student nije pronađen. Pokušajte ponovo.");
 						else break;
 					}
+					pronadjen3 = false;
 					while (!pronadjen3) {
 						System.out.println("Unesite šifru predmeta na koji želite upisati studenta: ");
 						String sifraPredmeta = ulaz.nextLine();
@@ -152,7 +161,8 @@ public class Program {
 					int indeksStudenta1 = 0, brojIndeksa1 = 0;
 					while (!pronadjen4) {
 						System.out.println("Unesite broj indeksa studenta kojeg želite ispisati: ");
-						brojIndeksa = ulaz.nextInt();
+						brojIndeksa1 = ulaz.nextInt();
+						ulaz.nextLine();
 						for (int i = 0; i < niz2.length; i++) {
 							if (niz2[i].DajBrojIndeksa() == brojIndeksa1) {
 								pronadjen4 = true;
@@ -163,6 +173,7 @@ public class Program {
 						if (!pronadjen4) System.out.println("Student nije pronađen. Pokušajte ponovo.");
 						else break;
 					}
+					pronadjen4 = false;
 					while (!pronadjen4) {
 						System.out.println("Unesite šifru predmeta sa kojeg želite ispisati studenta: ");
 						String sifraPredmeta = ulaz.nextLine();
