@@ -29,16 +29,22 @@ class StudentTest {
     }
     @Test
     void promijeniIme() {
+        Student s = new Student ("Amir", "Nakić", 17787);
+        s.PromijeniIme("Abdurahman");
+        assertEquals("Abdurahman", s.DajIme());
     }
-
     @Test
     void promijeniPrezime() {
+        Student s = new Student ("Amir", "Nakić", 17787);
+        s.PromijeniPrezime("Beckham");
+        assertEquals("Beckham", s.DajPrezime());
     }
-
     @Test
     void promijeniBrojIndeksa() {
+        Student s = new Student ("Amir", "Nakić", 17787);
+        s.PromijeniBrojIndeksa(431998);
+        assertEquals(431998, s.DajBrojIndeksa());
     }
-
     @Test
     void ispisiStudenta() {
     }
