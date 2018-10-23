@@ -8,52 +8,69 @@ class StudentTest {
     void testKonstruktora() {
         Student s = new Student ("Amila", "Šoše", 17783);
         assertAll("grupni test za funkcionalnost konstruktora",
-            () ->  assertEquals("Amila", s.DajIme()),
+            () -> assertEquals("Amila", s.DajIme()),
             () -> assertEquals("Šoše", s.DajPrezime()),
             () -> assertEquals(17783, s.DajBrojIndeksa()));
     }
     @Test
-    void dajIme() {
+    void ispravnostPostavljanjaImena() {
         Student s = new Student ("Amir", "Nakić", 17787);
         assertEquals("Amir", s.DajIme());
     }
     @Test
-    void dajPrezime() {
+    void ispravnostPostavljanjaPrezimena() {
         Student s = new Student ("Amir", "Nakić", 17787);
         assertEquals("Nakić", s.DajPrezime());
     }
     @Test
-    void dajBrojIndeksa() {
+    void ispravnostPostavljanjaBrojaIndeksa() {
         Student s = new Student("Amir", "Nakić", 17787);
         assertEquals(17787, s.DajBrojIndeksa());
     }
     @Test
-    void promijeniIme() {
+    void promjenaImena() {
         Student s = new Student ("Amir", "Nakić", 17787);
         s.PromijeniIme("Abdurahman");
         assertEquals("Abdurahman", s.DajIme());
     }
     @Test
-    void promijeniPrezime() {
+    void promjenaPrezimena() {
         Student s = new Student ("Amir", "Nakić", 17787);
         s.PromijeniPrezime("Beckham");
         assertEquals("Beckham", s.DajPrezime());
     }
     @Test
-    void promijeniBrojIndeksa() {
+    void promjenaBrojaIndeksa() {
         Student s = new Student ("Amir", "Nakić", 17787);
         s.PromijeniBrojIndeksa(431998);
         assertEquals(431998, s.DajBrojIndeksa());
     }
     @Test
-    void ispisiStudenta() {
-
+    void ispisStudenta() {
+        Student s = new Student ("Amir", "Nakić", 17787);
+        assertEquals("Nakić Amir (17787)", s.IspisiStudenta());
     }
     @Test
-    void istiStudent() {
+    void jednakostDvaStudenta() {
+        Student s1 = new Student ("Amir", "Nakić", 17787);
+        Student s2 = new Student ("Amir", "Nakić", 17787);
+        assertTrue(s1.IstiStudent(s2));
     }
-
+    @Test
+    void nejednakostDvaStudenta() {
+        Student s1 = new Student ("Amir", "Nakić", 17787);
+        Student s2 = new Student ("Amila", "Šoše", 17783);
+        assertFalse(s1.IstiStudent(s2));
+    }
     @Test
     void brisiStudenta() {
+        Student s1 = new Student ("Amir", "Nakić", 17787);
+        Student s2 = new Student ("Amila", "Šoše", 17783);
+        Student s3 = new Student ("Ilma", "Okanović", 17773);
+        s1.BrisiStudenta(); s2.BrisiStudenta();
+        assertAll("testiranje brisanja studenata",
+                () -> assertNull(s1.DajIme()),
+                () -> assertNull(s2.DajPrezime()),
+                () -> assertNotNull(s3.DajBrojIndeksa()));
     }
 }
